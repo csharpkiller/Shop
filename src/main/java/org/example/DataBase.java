@@ -12,14 +12,6 @@ public class DataBase {
         try {
             statement = sqlConnect.getConnect().createStatement();
             String sql;
-            /*sql = String.format("SELECT * FROM users WHERE email='%s';", user.getEmail());
-            ResultSet resultSet = statement.executeQuery(sql);
-            if(resultSet != null){
-                System.out.println("this email is registered");
-                statement.close();
-                sqlConnect.disconnect();
-                return;
-            }*/
 
             sql = String.format("INSERT INTO users(firstname, lastname, email, address, phonenumber, password) VALUES('%s', '%s', '%s', '%s', '%d', '%s');",
                     user.getFirstName(), user.getLastName(), user.getEmail(), user.getAddress(), user.getPhoneNumber(), user.getPassword());
